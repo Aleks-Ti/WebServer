@@ -3,7 +3,9 @@ name = "webserver"
 version = "0.1.0"
 description = "webserver on python check"
 requires-python = ">=3.12"
+readme = "README.md"
 dependencies = ["aiofiles>=24.1.0"]
+
 
 [project.optional-dependencies]
 cli = ["ruff>=0.6.4"]
@@ -12,8 +14,12 @@ cli = ["ruff>=0.6.4"]
 dev-dependencies = ["ruff>=0.6.5"]
 index-strategy = "unsafe-best-match"
 
+[tool.uv.workspace]
+members = ["packages/*"]
+exclude = ["packages/seeds"]
+
 [project.scripts]
-hello = "src.utils:check"
+
 
 [tool.ruff]
 line-length = 135
@@ -64,6 +70,3 @@ exclude = [
 
 [tool.ruff.pydocstyle]
 convention = "google"
-
-[tool.uv.workspace]
-members = ["seed_packaged-app", "src/seed_packaged-app"]

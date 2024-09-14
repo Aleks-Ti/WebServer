@@ -7,7 +7,7 @@ endif
 
 
 start:
-	python src/main.py
+	python -m src.main
 
 st:
 	ruff . --fix
