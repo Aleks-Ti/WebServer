@@ -8,15 +8,17 @@ dependencies = ["aiofiles>=24.1.0"]
 
 
 [project.optional-dependencies]
-cli = ["ruff>=0.6.4"]
+# cli = ["ruff>=0.6.4"]
 
 [tool.uv]
 dev-dependencies = ["ruff>=0.6.5"]
-index-strategy = "unsafe-best-match"
+
+[tool.uv.sources]
+src = { workspace = true }
 
 [tool.uv.workspace]
-members = ["packages/*"]
-exclude = ["packages/seeds"]
+members = ["webserver/*"]
+exclude = ["webserver/seeds"]
 
 [project.scripts]
 
